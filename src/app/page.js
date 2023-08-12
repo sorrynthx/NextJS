@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <h2>Welcome</h2>
       <p>Hello Next.js</p>
+      <img src="/test1.jpg"></img>
     </>
     
   )

@@ -1,3 +1,4 @@
+//"use client" (client component 사용 선언)
 import Link from 'next/link'
 import './globals.css'
 
@@ -6,14 +7,19 @@ export const metadata = {
   description: '넥스트 APP 공부1',
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+   
+  const res = await fetch('http://localhost:9999/topics');
+  const topics = await res.json();
+
   return (
     <html>
       <body>
       <h1><Link href="/">WEB</Link></h1>
       <ol>
-        <li><Link href="/read/1">html</Link></li>
-        <li><Link href="/read/2">css</Link></li>
+        {topics.map((topic) => {
+          return <li key={topic.id}><Link href={`/read/${topic.id}`}>{topic.title}</Link></li>
+        })}
       </ol>
         {children}
         <ul>
