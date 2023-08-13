@@ -1,7 +1,45 @@
 {
   "topics": [
-    {"id": 1, "title": "html", "body": "html is ...."},
-    {"id": 2, "title": "css", "body": "css is ...."}
+    {
+      "id": 1,
+      "title": "HTML",
+      "body": "HTML is ...."
+    },
+    {
+      "id": 2,
+      "title": "Css",
+      "body": "Css is ...."
+    },
+    {
+      "title": "Javascript",
+      "body": "Javascript is ....",
+      "id": 3
+    },
+    {
+      "title": "React",
+      "body": "React is ...",
+      "id": 4
+    },
+    {
+      "title": "Spring Boot",
+      "body": "Spring boot is ...",
+      "id": 5
+    },
+    {
+      "title": "JAVA",
+      "body": "JAVA is ....",
+      "id": 6
+    },
+    {
+      "title": "Svelte",
+      "body": "Svelte is ...",
+      "id": 7
+    },
+    {
+      "title": "a1",
+      "body": "a1",
+      "id": 8
+    }
   ],
   "posts": [
     {

@@ -1,0 +1,8 @@
+-- start
+npm run dev
+
+-- build
+npm run build
+
+-- json server (test) run
+npx json-server --port 9999 --watch db.json

@@ -1,6 +1,7 @@
 //"use client" (client component 사용 선언)
 import Link from 'next/link'
 import './globals.css'
+import { Control } from './Control';
 
 export const metadata = {
   title: 'Next App Study1',
@@ -9,7 +10,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
    
-  const res = await fetch('http://localhost:9999/topics');
+  const res = await fetch(process.env.API_URL + 'topics', {next: {revalidate: 0}}); // or 캐시 사용 x {cache: 'no-store'}
   const topics = await res.json();
 
   return (
@@ -22,11 +23,7 @@ export default async function RootLayout({ children }) {
         })}
       </ol>
         {children}
-        <ul>
-          <li><Link href="/create">Create</Link></li>
-          <li><Link href="/update/1">Update</Link></li>
-          <li><input type="button" value="delete" /></li>
-        </ul>
+        <Control />
       </body>
     </html>
   )
